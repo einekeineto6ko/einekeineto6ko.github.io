@@ -37,8 +37,10 @@ let game = {
     },
 
     drawCanvas: function() {
-        this.enemy.action();
+        this.player.action();
         this.player.draw();
+
+        this.enemy.action();
         this.enemy.draw();
     },
 

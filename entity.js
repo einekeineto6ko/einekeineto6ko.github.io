@@ -1,7 +1,7 @@
 class Entity {
     constructor(props) {
-        Object.assign(this, props);
         this.speed = 1;
+        Object.assign(this, props);
     }
 
     moveLeft() {
@@ -15,11 +15,7 @@ class Entity {
         }
     }
     move(direction) {
-        if(direction === 'LEFT') {
-            this.moveLeft();
-        } else {
-            this.moveRight();
-        }
+        direction === 'LEFT' ? this.moveLeft() : this.moveRight();
     }
 
     draw() {

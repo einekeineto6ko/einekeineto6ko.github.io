@@ -1,7 +1,7 @@
 class Enemy extends Entity {
     constructor(props) {
         super(props);
-        this.speed = 5;
+
         this.direction = 'LEFT';
     }
 

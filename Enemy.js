@@ -1,6 +1,6 @@
 class Enemy extends Entity {
-    constructor(props) {
-        super(props);
+    constructor(game, imageUrl, x, y, speed=5) {
+        super(game, imageUrl, x, y, speed);
 
         this.direction = 'LEFT';
     }
@@ -17,11 +17,9 @@ class Enemy extends Entity {
     }
 
     fire() {
-        this.game.projectiles.push(new Projectile({imageUrl: "assets/enemies/emil-ivanov/images/projectiles/email.jpg",
-                                    game: this.game,
-                                    owner: 'ENEMY',
-                                    speed: 2,
-                                    x: this.x + this.width/2 - 10,
-                                    y: this.y + 80}));
+        this.game.projectiles.push(new Projectile(
+            this.game, "assets/enemies/emil-ivanov/images/projectiles/email.jpg",
+            this.x + this.width/2 - 10, this.y + 80,
+            'ENEMY', 2));
     }
 }

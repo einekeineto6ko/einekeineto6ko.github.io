@@ -1,9 +1,12 @@
 class Body {
-    constructor(props) {
-        Object.assign(this, props);
+    constructor(game, imageUrl, x, y, speed) {
+        this.game = game;
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
 
         this.image = new Image();
-        this.image.src = this.imageUrl;
+        this.image.src = imageUrl;
         this.image.addEventListener('load', () => {
             this.width = this.image.naturalWidth;
             this.height = this.image.naturalHeight;

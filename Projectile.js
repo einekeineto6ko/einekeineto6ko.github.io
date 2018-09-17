@@ -1,6 +1,8 @@
 class Projectile extends Body {
-    constructor(props) {
-        super(props);
+    constructor(game, imageUrl, x, y, owner, speed=10) {
+        super(game, imageUrl, x, y, speed);
+        
+        this.owner = owner;
     }
 
     move() {

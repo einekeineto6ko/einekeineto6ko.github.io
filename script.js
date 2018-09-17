@@ -10,16 +10,10 @@ let game = {
         this.canvas = document.getElementById("gameCanvas");
         this.context = this.canvas.getContext("2d");
 
-        this.player = new Player({imageUrl: "assets/player/images/head.jpg",
-                                  game: this,
-                                  speed: 5,
-                                  x: this.canvas.width / 2 - 40,
-                                  y: this.canvas.height - 100});
-        this.enemy = new Enemy({imageUrl: "assets/enemies/emil-ivanov/images/head.jpg",
-                                  game: this,
-                                  speed: 5,
-                                  x: (this.canvas.width / 2 - 40),
-                                  y: 0});
+        this.player = new Player(this, "assets/player/images/head.jpg",
+                                 this.canvas.width / 2 - 40, this.canvas.height - 100);
+        this.enemy = new Enemy(this, "assets/enemies/emil-ivanov/images/head.jpg",
+                               this.canvas.width / 2 - 40, 0);
 
         this.interval = setInterval(this.updateCanvas, 20);
     },

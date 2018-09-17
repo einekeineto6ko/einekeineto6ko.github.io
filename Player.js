@@ -1,6 +1,6 @@
 class Player extends Entity {
-    constructor(props) {
-        super(props);
+    constructor(game, imageUrl, x, y, speed=5) {
+        super(game, imageUrl, x, y, speed);
 
         this.leftArrowPressed = false;
         this.rightArrowPressed = false;
@@ -27,12 +27,10 @@ class Player extends Entity {
     };
 
     fire() {
-        this.game.projectiles.push(new Projectile({imageUrl: "assets/player/images/projectiles/bullet.png",
-                                    game: this.game,
-                                    owner: 'PLAYER',
-                                    speed: 10,
-                                    x: this.x + this.width / 2 - 10,
-                                    y: this.y - 20}));
+        this.game.projectiles.push(new Projectile(
+            this.game, "assets/player/images/projectiles/bullet.png",
+            this.x + this.width / 2 - 10, this.y - 20,
+            'PLAYER'));
     }
 
     action() {

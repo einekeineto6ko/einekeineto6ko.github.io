@@ -22,7 +22,7 @@ let game = {
                                   y: this.canvas.height - this.entityHeight,
                                   width: this.entityWidth,
                                   height: this.entityHeight});
-        this.enemy = new Enemy({imageUrl: "assets/enemies/bobby-habib/images/head.jpg",
+        this.enemy = new Enemy({imageUrl: "assets/enemies/emil-ivanov/images/head.jpg",
                                   game: this,
                                   speed: 5,
                                   x: (this.canvas.width - this.entityWidth) / 2,
@@ -49,6 +49,13 @@ let game = {
             projectile.action();
             projectile.draw();
         })
+    },
+
+    removeProjectile: function(projectile) {
+        var index = this.projectiles.indexOf(projectile);
+        if (index > -1) {
+            this.projectiles.splice(index, 1);
+        }
     },
 
     clearCanvas: function() {

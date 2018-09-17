@@ -1,9 +1,4 @@
 let game = {
-    entityWidth: 80,
-    entityHeight: 100,
-    projectileWidth: 10,
-    projectileHeight: 40,
-
     player: null,
     enemy: null,
     projectiles: [],
@@ -18,17 +13,13 @@ let game = {
         this.player = new Player({imageUrl: "assets/player/images/head.jpg",
                                   game: this,
                                   speed: 5,
-                                  x: (this.canvas.width - this.entityWidth) / 2,
-                                  y: this.canvas.height - this.entityHeight,
-                                  width: this.entityWidth,
-                                  height: this.entityHeight});
+                                  x: this.canvas.width / 2 - 40,
+                                  y: this.canvas.height - 100});
         this.enemy = new Enemy({imageUrl: "assets/enemies/emil-ivanov/images/head.jpg",
                                   game: this,
                                   speed: 5,
-                                  x: (this.canvas.width - this.entityWidth) / 2,
-                                  y: 0,
-                                  width: this.entityWidth,
-                                  height: this.entityHeight});
+                                  x: (this.canvas.width / 2 - 40),
+                                  y: 0});
 
         this.interval = setInterval(this.updateCanvas, 20);
     },

@@ -1,12 +1,17 @@
 class Body {
     constructor(props) {
         Object.assign(this, props);
+
+        this.image = new Image();
+        this.image.src = this.imageUrl;
+        this.image.addEventListener('load', () => {
+            this.width = this.image.naturalWidth;
+            this.height = this.image.naturalHeight;
+        });
     }
 
     draw() {
-        let image = new Image();
-        image.src = this.imageUrl;
-        this.game.context.drawImage(image, this.x, this.y, this.width, this.height);
+        this.game.context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 
     collidesWith(body) {

@@ -21,9 +21,7 @@ class Enemy extends Entity {
                                     game: this.game,
                                     owner: 'ENEMY',
                                     speed: 2,
-                                    x: this.x + this.width/2 - this.game.projectileWidth/2,
-                                    y: this.y + this.game.projectileHeight,
-                                    width: this.game.projectileWidth,
-                                    height: this.game.projectileHeight}));
+                                    x: this.x + this.width/2 - 10,
+                                    y: this.y + 80}));
     }
 }

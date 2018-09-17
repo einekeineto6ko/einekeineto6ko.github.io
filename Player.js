@@ -31,10 +31,8 @@ class Player extends Entity {
                                     game: this.game,
                                     owner: 'PLAYER',
                                     speed: 10,
-                                    x: this.x + this.width/2 - this.game.projectileWidth/2,
-                                    y: this.y - this.game.projectileHeight,
-                                    width: 20,
-                                    height: 30}));
+                                    x: this.x + this.width / 2 - 10,
+                                    y: this.y - 20}));
     }
 
     action() {

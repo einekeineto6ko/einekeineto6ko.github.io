@@ -1,8 +1,12 @@
 let game = {
-    player: null,
     entityWidth: 80,
     entityHeight: 100,
+    projectileWidth: 10,
+    projectileHeight: 40,
+
+    player: null,
     enemy: null,
+    projectiles: [],
 
     canvas: null,
     context: null,
@@ -12,21 +16,19 @@ let game = {
         this.context = this.canvas.getContext("2d");
 
         this.player = new Player({imageUrl: "assets/player/images/head.jpg",
-                                  canvas: this.canvas,
-                                  context: this.context,
+                                  game: this,
                                   speed: 5,
                                   x: (this.canvas.width - this.entityWidth) / 2,
                                   y: this.canvas.height - this.entityHeight,
                                   width: this.entityWidth,
-                                  height:this.entityHeight});
+                                  height: this.entityHeight});
         this.enemy = new Enemy({imageUrl: "assets/enemies/bobby-habib/images/head.jpg",
-                                  canvas: this.canvas,
-                                  context: this.context,
+                                  game: this,
                                   speed: 5,
                                   x: (this.canvas.width - this.entityWidth) / 2,
                                   y: 0,
                                   width: this.entityWidth,
-                                  height:this.entityHeight});
+                                  height: this.entityHeight});
 
         this.interval = setInterval(this.updateCanvas, 20);
     },
@@ -42,6 +44,11 @@ let game = {
 
         this.enemy.action();
         this.enemy.draw();
+
+        this.projectiles.forEach((projectile) => {
+            projectile.move();
+            projectile.draw();
+        })
     },
 
     clearCanvas: function() {

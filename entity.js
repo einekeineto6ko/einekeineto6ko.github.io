@@ -10,7 +10,7 @@ class Entity {
         }
     }
     moveRight() {
-        if(this.x + this.width < this.canvas.width) {
+        if(this.x + this.width < this.game.canvas.width) {
             this.x += this.speed;
         }
     }
@@ -21,7 +21,7 @@ class Entity {
     draw() {
         let image = new Image();
         image.src = this.imageUrl;
-        this.context.drawImage(image, this.x, this.y, this.width, this.height);
+        this.game.context.drawImage(image, this.x, this.y, this.width, this.height);
     }
 
 }

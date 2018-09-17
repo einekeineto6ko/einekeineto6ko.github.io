@@ -6,3 +6,17 @@ canvas {
     border: 1px solid #d3d3d3;
     background-color: white;
 }
+
+progress {
+    width: 1000px;
+    height:30px;
+}
+
+.center-screen {
+    color:red;
+    font-size: 80px;
+    font-weight: bold;
+    position:absolute;
+    left:30%;
+    top:40%;
+}

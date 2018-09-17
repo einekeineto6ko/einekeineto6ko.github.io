@@ -7,14 +7,20 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body onload="game.startGame()">
+<body onload="game.start()">
+
+<span hidden id="winMessage" class="center-screen">PWNAGE !!!</span>
+<span hidden id="loseMessage" class="center-screen">OMG n00b ...</span>
+
+<progress id="enemyLifeBar" value="100" max="100"></progress>
 
 <canvas id="gameCanvas" width=1000 height=600></canvas>
 
+<progress id="playerLifeBar" value="3" max="3"></progress>
+
 <br>
 <!--<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>-->
-<p>LEFT and RIGHT keys to move</p>
-<p>SPACE key to fire</p>
+<p>LEFT and RIGHT keys to move. SPACE key to fire</p>
 
 <script src="classes/Body.js"></script>
 <script src="classes/Entity.js"></script>

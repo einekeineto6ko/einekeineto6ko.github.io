@@ -1,6 +1,7 @@
 class Entity extends Body {
-    constructor(game, imageUrl, x, y, speed=5) {
+    constructor(game, imageUrl, x, y, life, speed=5) {
         super(game, imageUrl, x, y, speed);
+        this.life = life;
     }
 
     moveLeft() {

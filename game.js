@@ -6,14 +6,16 @@ let game = {
     canvas: null,
     context: null,
 
-    startGame: function() {
+    start: function() {
         this.canvas = document.getElementById("gameCanvas");
         this.context = this.canvas.getContext("2d");
 
         this.player = new Player(this, "assets/player/images/head.jpg",
-                                 this.canvas.width / 2 - 40, this.canvas.height - 100);
+            this.canvas.width / 2 - 40, this.canvas.height - 100,
+            document.getElementById('playerLifeBar').getAttribute('value'));
         this.enemy = new Enemy(this, "assets/enemies/emil-ivanov/images/head.jpg",
-                               this.canvas.width / 2 - 40, 0);
+            this.canvas.width / 2 - 40, 0,
+            document.getElementById('enemyLifeBar').getAttribute('value'));
 
         this.interval = setInterval(this.updateCanvas, 20);
     },
@@ -47,7 +49,13 @@ let game = {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
 
-    stopGame: function() {
+    stop: function(winner) {
         clearInterval(this.interval);
+
+        if(winner === 'PLAYER') {
+            document.getElementById('winMessage').removeAttribute('hidden');
+        } else if (winner === 'ENEMY') {
+            document.getElementById('loseMessage').removeAttribute('hidden');
+        }
     }
 }

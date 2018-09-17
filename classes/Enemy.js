@@ -1,6 +1,6 @@
 class Enemy extends Entity {
-    constructor(game, imageUrl, x, y, speed=5) {
-        super(game, imageUrl, x, y, speed);
+    constructor(game, imageUrl, x, y, life, speed=5) {
+        super(game, imageUrl, x, y, life, speed);
 
         this.direction = 'LEFT';
     }

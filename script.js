@@ -46,7 +46,7 @@ let game = {
         this.enemy.draw();
 
         this.projectiles.forEach((projectile) => {
-            projectile.move();
+            projectile.action();
             projectile.draw();
         })
     },

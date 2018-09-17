@@ -24,6 +24,7 @@ class Player extends Entity {
                 this.game.projectiles.push(new Projectile({imageUrl: "assets/player/images/projectiles/knife.jpg",
                                            game: this.game,
                                            owner: 'PLAYER',
+                                           speed: 10,
                                            x: this.x + this.width/2 - this.game.projectileWidth/2,
                                            y: this.y - this.game.projectileHeight,
                                            width: this.game.projectileWidth,

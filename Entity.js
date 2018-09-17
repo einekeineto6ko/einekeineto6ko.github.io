@@ -1,7 +1,6 @@
-class Entity {
+class Entity extends Body {
     constructor(props) {
-        this.speed = 1;
-        Object.assign(this, props);
+        super(props);
     }
 
     moveLeft() {
@@ -17,11 +16,4 @@ class Entity {
     move(direction) {
         direction === 'LEFT' ? this.moveLeft() : this.moveRight();
     }
-
-    draw() {
-        let image = new Image();
-        image.src = this.imageUrl;
-        this.game.context.drawImage(image, this.x, this.y, this.width, this.height);
-    }
-
 }

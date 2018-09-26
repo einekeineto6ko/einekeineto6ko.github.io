@@ -7,6 +7,8 @@ let game = {
     context: null,
 
     start: function() {
+        document.getElementById("game").removeAttribute('hidden');
+
         this.canvas = document.getElementById("gameCanvas");
         this.context = this.canvas.getContext("2d");
 
@@ -53,9 +55,9 @@ let game = {
         clearInterval(this.interval);
 
         if(winner === 'PLAYER') {
-            document.getElementById('winMessage').removeAttribute('hidden');
+            showMessage("PWNAAAGE !!!");
         } else if (winner === 'ENEMY') {
-            document.getElementById('loseMessage').removeAttribute('hidden');
+            showMessage("OMG n00b ...");
         }
     }
 }

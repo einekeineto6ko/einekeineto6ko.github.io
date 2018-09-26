@@ -12,11 +12,13 @@ progress {
     height:30px;
 }
 
-.center-screen {
-    color:red;
-    font-size: 80px;
+.main-message {
+    color:darkred;
+    font-size: 50px;
     font-weight: bold;
-    position:absolute;
-    left:30%;
-    top:40%;
+
+    position: fixed;
+    text-align: center;
+    left: 20%;
+    top: 30%;
 }
